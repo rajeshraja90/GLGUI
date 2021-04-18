@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Task List</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                
+                <th>Id</th>
+                <th>ProjectId</th>
+                <th>UserId</th>
+                <th>Details</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tasks of tasks; trackBy: tasks.id">
+                
+                <td>{{ tasks.id }}</td>
+                <td>{{ tasks.projectid }}</td>
+                <td>{{ tasks.userid }}</td>
+                <td>{{ tasks.details }}</td>
+                <td>{{ tasks.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
