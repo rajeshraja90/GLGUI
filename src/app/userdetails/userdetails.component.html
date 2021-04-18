@@ -1,1 +1,26 @@
-<p>userdetails works!</p>
+<div class="container">
+    <div style="margin-top:50px;margin-bottom: 50px;">
+    <button mat-raised-button routerLink='../User' style="background-color:cadetblue;">Add New User</button>
+</div>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of users; trackBy: users.id">
+                
+                <td>{{ users.id }}</td>
+                <td>{{ users.firstname }}</td>
+                <td>{{ users.lastname }}</td>
+                <td>{{ users.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

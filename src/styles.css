@@ -27,5 +27,8 @@ color:seashell;
 .mat-toolbar div{
     float:right;
 }
+.example-spacer {
+    flex: 1 1 auto;
+  }
 
 

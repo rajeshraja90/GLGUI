@@ -11,8 +11,8 @@ export class TaskdetailsComponent implements OnInit {
 
   constructor() {
     this.tasks = [
-      { id: 1, projectid: 1, userid: 1, details: "task1", status: "New" },
-      { id: 2, projectid: 2, userid: 2, details: "task1", status: "New" }
+      { id: 1, projectid: 1, userid: 1, details: "Task 1", status: "New" },
+      { id: 2, projectid: 2, userid: 2, details: "Task 2", status: "InProgress" }
     ]
   }
 

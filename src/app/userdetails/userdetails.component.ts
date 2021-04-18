@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
 
-  constructor() { }
+  public users = [] as any;
+
+  constructor() {
+    this.users = [
+      { id: 1, firstname: "Rajesh", lastname: "Khan", email: "rajesh@rk.com" },
+      { id: 2, firstname: "Samir", lastname: "David", email: "samir@rk.com" }
+    ]
+  }
 
   ngOnInit(): void {
+  }
+
+  trackByuserCode(users: any): number{
+    return users.id;
   }
 
 }

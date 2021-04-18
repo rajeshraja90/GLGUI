@@ -1,6 +1,7 @@
 <div style="margin-left: 30%;margin-top: 10%;">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../TaskDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
+        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Delete</button>
         <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
@@ -30,6 +31,23 @@
                     <select matNativeControl>
                         <option value="1">User 1</option>
                         <option value="2">User 2</option>
+                    </select>
+                  </mat-form-field>   
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <label>Status</label>
+            </td>
+            
+            <td>
+                <mat-form-field style="margin-left:10px;width:300px;" >
+                    <select matNativeControl>
+                        <option value="1">New</option>
+                        <option value="2">InProgress</option>
+                        <option value="3">OnHold</option>
+                        <option value="4">Done</option>
                     </select>
                   </mat-form-field>   
             </td>

@@ -3,16 +3,17 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <span>Project Management</span>
-    <button mat-button>Logout</button>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink='../Login'>Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container >
   <mat-sidenav mode="side" opened style="width:150px;">
     <mat-nav-list>
-      <a mat-list-item routerLink='User' mat-button style="height: 50px;margin-top:40px;margin-left: 20px;"> User</a><br>
-      <a mat-list-item routerLink='Project' mat-button style="height: 50px;margin-left: 20px;"> Project</a><br>
-      <a mat-list-item routerLink='Task' mat-button style="height: 50px;margin-left: 20px;"> Task</a><br>
+      <a mat-list-item routerLink='UserDetails' mat-button style="height: 50px;margin-top:40px;margin-left: 20px;"> User</a><br>
+      <a mat-list-item routerLink='ProjectDetails' mat-button style="height: 50px;margin-left: 20px;"> Project</a><br>
+      <a mat-list-item routerLink='TaskDetails' mat-button style="height: 50px;margin-left: 20px;"> Task</a><br>
     </mat-nav-list>
   </mat-sidenav>
 <mat-sidenav-content>

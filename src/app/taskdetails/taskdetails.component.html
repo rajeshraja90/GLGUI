@@ -1,5 +1,7 @@
 <div class="container">
-    <h1>Task List</h1>
+    <div style="margin-top:50px;margin-bottom: 50px;">
+        <button mat-raised-button routerLink='../Task' style="background-color:cadetblue;">Add New Task</button>
+    </div>
 
     <table class="table table-bordered">
         <thead>
@@ -13,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let tasks of tasks; trackBy: tasks.id">
+            <tr *ngFor="let tasks of tasks; trackBy: tasks.id;">
                 
                 <td>{{ tasks.id }}</td>
                 <td>{{ tasks.projectid }}</td>

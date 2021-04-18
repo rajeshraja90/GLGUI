@@ -1,1 +1,24 @@
-<p>projectdetails works!</p>
+<div class="container">
+    <div style="margin-top:50px;margin-bottom: 50px;">
+    <button mat-raised-button routerLink='../Project' style="background-color:cadetblue;">Add New Project</button>
+</div>
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                
+                <th>Id</th>
+                <th>Project Name</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let projects of projects; trackBy: projects.id">
+                
+                <td>{{ projects.id }}</td>
+                <td>{{ projects.projectname }}</td>
+                <td>{{ projects.details }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

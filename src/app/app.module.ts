@@ -21,11 +21,21 @@ import { ProjectdetailsComponent } from './projectdetails/projectdetails.compone
 import { TaskdetailsComponent } from './taskdetails/taskdetails.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { UserupdateComponent } from './userupdate/userupdate.component';
+import { ProjectupdateComponent } from './projectupdate/projectupdate.component';
+import { TaskupdateComponent } from './taskupdate/taskupdate.component';
 
 const routes: Routes = [
   { path:'User', component:UserComponent },
   { path:'Project', component:ProjectComponent },
   { path:'Task', component:TaskComponent },
+  { path:'UserDetails', component:UserdetailsComponent },
+  { path:'ProjectDetails', component:ProjectdetailsComponent },
+  { path:'TaskDetails', component:TaskdetailsComponent },
+  { path:'UserUpdate', component:UserupdateComponent },
+  { path:'ProjectUpdate', component:ProjectupdateComponent },
+  { path:'TaskUpdate', component:TaskupdateComponent },
+  { path:'Login', component:LoginComponent },
 ]
 
 @NgModule({
@@ -37,7 +47,10 @@ const routes: Routes = [
     LoginComponent,
     UserdetailsComponent,
     ProjectdetailsComponent,
-    TaskdetailsComponent
+    TaskdetailsComponent,
+    UserupdateComponent,
+    ProjectupdateComponent,
+    TaskupdateComponent
   ],
   imports: [
     BrowserModule,
