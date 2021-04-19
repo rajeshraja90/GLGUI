@@ -8,13 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'projectmanagement-gui';
 
-  public isEditFormOpen = false;
   
-  onButtonClicked()
-  {
-    this.isEditFormOpen=true;
-  }
-
  ngOnInit() {
   
 }
