@@ -24,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import { UserupdateComponent } from './userupdate/userupdate.component';
 import { ProjectupdateComponent } from './projectupdate/projectupdate.component';
 import { TaskupdateComponent } from './taskupdate/taskupdate.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path:'User', component:UserComponent },
@@ -60,7 +61,7 @@ const routes: Routes = [
     CommonModule,
     BrowserAnimationsModule,
     MatToolbarModule,MatSidenavModule,MatIconModule,MatButtonModule,MatFormFieldModule,
-    MatInputModule,
+    MatInputModule,HttpClientModule,
      RouterModule.forRoot(routes)
   ],
   providers: [],

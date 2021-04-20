@@ -1,4 +1,4 @@
-<div style="margin-left: 30%;margin-top: 10%;">
+<div class="maindiv">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../UserDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button>        
         <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
@@ -8,12 +8,12 @@
        
         <tr>
             <td>       
-                <br>         
+                <br>        
                 <label>First Name</label>
             </td>
             <td>  
-                <mat-form-field style="margin-left:10px;width:300px;">          
-                <input matInput type="text">
+                <mat-form-field  style="margin-left:10px;width:300px;">          
+                <input type="text" matInput>
                 </mat-form-field>   
             </td>
         </tr>
@@ -23,7 +23,7 @@
                 <label>Last Name</label>
             </td>
             <td>  
-                <mat-form-field style="margin-left:10px;width:300px;">             
+                <mat-form-field  style="margin-left:10px;width:300px;">             
                 <input matInput tyep="text">
                 </mat-form-field>
                   
@@ -35,8 +35,32 @@
                 <label>Email</label>
             </td>
             <td >        
-                <mat-form-field style="margin-left:10px;width:300px;">             
+                <mat-form-field  style="margin-left:10px;width:300px;">             
                  <input matInput tyep="email">
+                </mat-form-field>
+                 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <label>Password</label>
+            </td>
+            <td >        
+                <mat-form-field  style="margin-left:10px;width:300px;">             
+                 <input matInput type="password">
+                </mat-form-field>
+                 
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <br>
+                <label>Confirm Password</label>
+            </td>
+            <td >        
+                <mat-form-field  style="margin-left:10px;width:300px;">             
+                 <input matInput type="password">
                 </mat-form-field>
                  
             </td>
