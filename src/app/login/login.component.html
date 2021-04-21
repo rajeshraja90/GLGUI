@@ -1,34 +1,36 @@
 
 <div class="maindiv">   
-   
+   <form #loginForm='ngForm' (ngSubmit)="onLogin(loginForm)">
     <table style="margin-top: 40px;">
        
         <tr>
             <td>       
                 <br>         
-                <label>User Name</label>
+                <label for="username">User Name</label>
             </td>
             <td>  
                 <mat-form-field style="margin-left:10px;width:250px;">          
-                <input matInput type="text">
+                <input matInput type="text" required ngModel name="username">
                 </mat-form-field>   
             </td>
         </tr>
         <tr>
             <td>
                 <br>
-                <label>Password</label>
+                <label for="password">Password</label>
             </td>
             <td>  
                 <mat-form-field style="margin-left:10px;width:250px;">             
-                <input matInput type="password">
+                <input matInput type="password" required ngModel name="password">
                 </mat-form-field>
                   
             </td>
         </tr>
                 
     </table>
+
     <div style="margin-left: 30%;margin-top:20px;">
-        <button mat-raised-button routerLink='../UserDetails' style="margin-left:10px;background-color:cadetblue;">Login</button>        
+        <button type="submit" [disabled]="!loginForm.valid" mat-raised-button style="margin-left:10px;background-color:cadetblue;">Login</button>        
     </div>
+</form>
 </div>

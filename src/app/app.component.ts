@@ -13,6 +13,15 @@ export class AppComponent {
   
 }
 
+loggedin()
+{
+  return localStorage.getItem('token');
+}
+onLogout()
+{
+  localStorage.removeItem('token');
+}
+
 }
 
 

@@ -4,13 +4,13 @@
   <mat-toolbar-row>
     <span>Project Management</span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink='../Login'>Logout</button>
+    <button *ngIf="loggedin()" (click)="onLogout()" mat-button routerLink='../Login'>Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container >
   <mat-sidenav mode="side" opened style="width:150px;">
-    <mat-nav-list>
+    <mat-nav-list *ngIf="loggedin()">
       <a mat-list-item routerLink='UserDetails' mat-button style="height: 50px;margin-top:40px;margin-left: 20px;"> User</a><br>
       <a mat-list-item routerLink='ProjectDetails' mat-button style="height: 50px;margin-left: 20px;"> Project</a><br>
       <a mat-list-item routerLink='TaskDetails' mat-button style="height: 50px;margin-left: 20px;"> Task</a><br>

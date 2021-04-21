@@ -25,8 +25,10 @@ import { UserupdateComponent } from './userupdate/userupdate.component';
 import { ProjectupdateComponent } from './projectupdate/projectupdate.component';
 import { TaskupdateComponent } from './taskupdate/taskupdate.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
+  {path:'',redirectTo:'login', pathMatch: 'full' },
   { path:'User', component:UserComponent },
   { path:'Project', component:ProjectComponent },
   { path:'Task', component:TaskComponent },
@@ -64,7 +66,7 @@ const routes: Routes = [
     MatInputModule,HttpClientModule,
      RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })
