@@ -25,7 +25,7 @@ import { UserupdateComponent } from './userupdate/userupdate.component';
 import { ProjectupdateComponent } from './projectupdate/projectupdate.component';
 import { TaskupdateComponent } from './taskupdate/taskupdate.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './services/authservice.service';
 
 const routes: Routes = [
   {path:'',redirectTo:'login', pathMatch: 'full' },

@@ -14,12 +14,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let users of users; trackBy: users.id">
+            <tr *ngFor="let users of userservice.listuser">
                 
-                <td>{{ users.id }}</td>
-                <td>{{ users.firstname }}</td>
-                <td>{{ users.lastname }}</td>
-                <td>{{ users.email }}</td>
+                <td (click)="onSelected()" >{{ users.id }}</td>
+                <td (click)="onSelected()">{{ users.firstName }}</td>
+                <td (click)="onSelected()">{{ users.lastName }}</td>
+                <td (click)="onSelected()">{{ users.email }}</td>
             </tr>
         </tbody>
     </table>

@@ -1,7 +1,8 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/authservice.service';
 
 @Component({
   selector: 'app-login',
@@ -15,19 +16,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  username : string; 
+  welcomeuser :string;
   onLogin(loginForm : NgForm)
   {
-    localStorage.setItem('token',"username")    
-    console.log(loginForm.value);
-
-    this.router.navigate(['UserDetails']);
-
-    const token=this.authService.authUser(loginForm.value);
-    if(token)
+        
+    this.authService.authUser(loginForm.value).then(
+       res=>{this.username =res.email, this.welcomeuser=res.firstName +" "+res.lastName}       
+    )
+    if(this.username != null)
     {
-      localStorage.setItem('token',token.username)
-      console.log("loginsuccess");
+      localStorage.setItem('token',this.welcomeuser); 
+      this.router.navigate(['UserDetails']);
     }
   }
 

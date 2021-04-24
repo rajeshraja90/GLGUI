@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'projectmanagement-gui';
 
+  username: string ;
   
  ngOnInit() {
   
@@ -15,6 +16,7 @@ export class AppComponent {
 
 loggedin()
 {
+  this.username = "Welcome "+localStorage.getItem('token');
   return localStorage.getItem('token');
 }
 onLogout()

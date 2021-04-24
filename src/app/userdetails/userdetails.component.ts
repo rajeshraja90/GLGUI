@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserModel } from '../models/usermodel.model';
+import { UserService } from '../services/userservice.service';
 
 @Component({
   selector: 'app-userdetails',
@@ -7,20 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
 
-  public users = [] as any;
-
-  constructor() {
-    this.users = [
-      { id: 1, firstname: "Rajesh", lastname: "Khan", email: "rajesh@rk.com" },
-      { id: 2, firstname: "Samir", lastname: "David", email: "samir@rk.com" }
-    ]
+  constructor(public userservice:UserService) {
+        
   }
 
   ngOnInit(): void {
+
+    this.userservice.getuser(); 
   }
 
-  trackByuserCode(users: any): number{
-    return users.id;
-  }
+ onSelected()
+ {
+   
+ }
 
 }
