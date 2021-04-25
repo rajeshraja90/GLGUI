@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../services/userservice.service';
 
 @Component({
   selector: 'app-user',
@@ -7,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router,private userservice: UserService) { }
 
   ngOnInit(): void {
     
+  }
+
+  userid : number;
+
+  onAddUser(userdata : NgForm)
+  {
+      this.userservice.addUser(userdata.value).then(res =>{ 
+      this.userservice.getuser();
+      this.router.navigate(['UserDetails']);
+    });
+      
   }
 
 }

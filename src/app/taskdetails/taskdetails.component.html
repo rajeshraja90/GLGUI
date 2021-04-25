@@ -9,19 +9,21 @@
                 
                 <th>Id</th>
                 <th>ProjectId</th>
-                <th>UserId</th>
+                <th>AssignedToUser</th>
                 <th>Details</th>
                 <th>Status</th>
+                <th>CreatedOn</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let tasks of tasks; trackBy: tasks.id;">
+            <tr *ngFor="let tasks of taskservice.listtask" (click)="onTaskSelected(tasks)">
                 
                 <td>{{ tasks.id }}</td>
-                <td>{{ tasks.projectid }}</td>
-                <td>{{ tasks.userid }}</td>
-                <td>{{ tasks.details }}</td>
+                <td>{{ tasks.projectID }}</td>
+                <td>{{ tasks.assignedToUserID }}</td>
+                <td>{{ tasks.detail }}</td>
                 <td>{{ tasks.status }}</td>
+                <td>{{ tasks.createdOn | date:'dd/MM/yyyy' }}</td>
             </tr>
         </tbody>
     </table>

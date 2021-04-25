@@ -1,7 +1,8 @@
 <div class="maindiv">
+    <form #addUserForm="ngForm" (ngSubmit)="onAddUser(addUserForm)">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../UserDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button>        
-        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button type="submit" [disabled]="!addUserForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">
@@ -13,7 +14,7 @@
             </td>
             <td>  
                 <mat-form-field  style="margin-left:10px;width:300px;">          
-                <input type="text" matInput>
+                <input type="text" matInput required ngModel name="firstName" >
                 </mat-form-field>   
             </td>
         </tr>
@@ -24,7 +25,7 @@
             </td>
             <td>  
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                <input matInput tyep="text">
+                <input matInput tyep="text" required ngModel name="lastName">
                 </mat-form-field>
                   
             </td>
@@ -36,7 +37,7 @@
             </td>
             <td >        
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                 <input matInput tyep="email">
+                 <input matInput tyep="email" required ngModel name="email">
                 </mat-form-field>
                  
             </td>
@@ -48,7 +49,7 @@
             </td>
             <td >        
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                 <input matInput type="password">
+                 <input matInput type="password" required  >
                 </mat-form-field>
                  
             </td>
@@ -60,12 +61,11 @@
             </td>
             <td >        
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                 <input matInput type="password">
+                 <input matInput type="password" required ngModel name="password">
                 </mat-form-field>
                  
             </td>
-        </tr>
-        
+        </tr>    
     </table>
-
+</form>
 </div>

@@ -1,7 +1,8 @@
 <div class="maindiv">
+    <form #projectAddForm='ngForm' (ngSubmit)="onAddProject(projectAddForm)" >
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../ProjectDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
-        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button type="submit" [disabled]="!projectAddForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">
@@ -13,7 +14,7 @@
             </td>
             <td>  
                 <mat-form-field style="margin-left:10px;width:300px;">          
-                <input matInput type="text">
+                <input matInput type="text" required ngModel name="name" >
                 </mat-form-field>   
             </td>
         </tr>
@@ -24,10 +25,11 @@
             </td>
             <td>  
                 <mat-form-field style="margin-left:10px;width:300px;" >             
-                <textarea matInput type="text"></textarea>
+                <textarea matInput type="text" required ngModel name="detail"></textarea>
                 </mat-form-field>
                   
             </td>
         </tr>
     </table>
+</form>
 </div>

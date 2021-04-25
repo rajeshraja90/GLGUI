@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProjectModel } from '../models/projectmodel.model';
+import { ProjectService } from '../services/projectservice.service';
 
 @Component({
   selector: 'app-projectdetails',
@@ -7,20 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectdetailsComponent implements OnInit {
 
-  public projects = [] as any;
-
-  constructor() {
-    this.projects = [
-      { id: 1, projectname: "Project 1", details: "This is project 1" },
-      { id: 2, projectname: "Project 2", details: "This is project 2" }
-    ]
+  
+  constructor(public projectservice : ProjectService, private router:Router) {
+    
   }
 
   ngOnInit(): void {
+
+    this.projectservice.getProjects();
+
   }
 
-  trackByprojectsCode(projects: any): number{
-    return projects.id;
+  onProjectSelected(project : ProjectModel)
+  {
+    this.projectservice.updateProjectCollection = project;
+    this.router.navigate(['ProjectUpdate']);
   }
 
+ 
 }

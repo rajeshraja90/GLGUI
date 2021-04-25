@@ -11,12 +11,25 @@ export class UserService {
    {  }
 
    listuser :UserModel[];
+
+   url ="https://localhost:44303/api/user";
+   updateUserCollection : UserModel;
       
   getuser()
   {
-    let url ="https://localhost:44303/api/user";
-
-   return this.http.get(url).toPromise().then(res=>this.listuser = res as UserModel[]);
+    
+   return this.http.get(this.url).toPromise().then(res=>this.listuser = res as UserModel[]);
 
   }
+
+  addUser(data : any)
+  {  
+      return this.http.post(this.url,data as UserModel).toPromise();
+  }
+
+  deleteUser(id : number)
+  {
+    return this.http.delete(this.url+"/Delete/"+id).toPromise();
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../services/userservice.service';
 
 @Component({
   selector: 'app-userupdate',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserupdateComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userservice:UserService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  onUserDelete(id : number)
+  {
+    this.userservice.deleteUser(id).then(res=>
+      {
+        this.userservice.getuser();
+        this.router.navigate(['UserDetails']);
+    });    
+
   }
 
 }

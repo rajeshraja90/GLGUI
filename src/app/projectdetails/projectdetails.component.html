@@ -10,14 +10,16 @@
                 <th>Id</th>
                 <th>Project Name</th>
                 <th>Details</th>
+                <th>CreatedOn</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let projects of projects; trackBy: projects.id">
+            <tr *ngFor="let projects of projectservice.listProject" (click)="onProjectSelected(projects)">
                 
                 <td>{{ projects.id }}</td>
-                <td>{{ projects.projectname }}</td>
-                <td>{{ projects.details }}</td>
+                <td>{{ projects.name }}</td>
+                <td>{{ projects.detail }}</td>
+                <td>{{projects.createdOn | date :'dd/MM/yyyy'}}</td>
             </tr>
         </tbody>
     </table>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from '../models/usermodel.model';
 import { UserService } from '../services/userservice.service';
 
@@ -9,7 +10,8 @@ import { UserService } from '../services/userservice.service';
 })
 export class UserdetailsComponent implements OnInit {
 
-  constructor(public userservice:UserService) {
+  constructor(public userservice:UserService,
+    private router: Router) {
         
   }
 
@@ -18,9 +20,10 @@ export class UserdetailsComponent implements OnInit {
     this.userservice.getuser(); 
   }
 
- onSelected()
+ onSelected(users :UserModel)
  {
-   
+   this.userservice.updateUserCollection = users;
+   this.router.navigate(['UserUpdate']);
  }
 
 }

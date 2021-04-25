@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TaskModel } from '../models/taskmodel.model';
+import { TaskService } from '../services/taskservice.service';
 
 @Component({
   selector: 'app-taskdetails',
@@ -7,20 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskdetailsComponent implements OnInit {
 
-  public tasks = [] as any;
-
-  constructor() {
-    this.tasks = [
-      { id: 1, projectid: 1, userid: 1, details: "Task 1", status: "New" },
-      { id: 2, projectid: 2, userid: 2, details: "Task 2", status: "InProgress" }
-    ]
-  }
+ constructor(public taskservice : TaskService, private router: Router)
+ {}
 
   ngOnInit(): void {
+
+    this.taskservice.gettask(); 
   }
 
-  trackBytaskCode(tasks: any): number{
-    return tasks.id;
+  onTaskSelected(tasks :TaskModel)
+  {
+    this.router.navigate(['TaskUpdate']);
   }
 
 }

@@ -1,14 +1,14 @@
 export class UserModel {
 
-    id :number =0;
+    id :number ;
     
-    firstName :string =''; 
+    firstName :string ; 
 
-    lastName :string ='';
+    lastName :string ;
 
-    email :string ='';
+    email :string ;
 
-    password :string ='';
+    password :string ;
    
     //public virtual IEnumerable<Tasks> Tasks { get; set; }
 }
