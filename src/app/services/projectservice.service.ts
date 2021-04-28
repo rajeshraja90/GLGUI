@@ -30,6 +30,12 @@ export class ProjectService {
 
   }
 
+  updateProject()
+  {    
+    return this.http.put(this.url,this.updateProjectCollection).toPromise();
+
+  }
+
   deleteProject(id : number)
   {
     return this.http.delete(this.url+"/Delete/"+id);

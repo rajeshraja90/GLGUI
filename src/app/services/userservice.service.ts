@@ -27,6 +27,11 @@ export class UserService {
       return this.http.post(this.url,data as UserModel).toPromise();
   }
 
+  updateUser()
+  {  
+      return this.http.put(this.url,this.updateUserCollection).toPromise();
+  }
+
   deleteUser(id : number)
   {
     return this.http.delete(this.url+"/Delete/"+id).toPromise();

@@ -24,9 +24,12 @@ export class ProjectupdateComponent implements OnInit {
     
   }
 
-  onProjectUpdate(project : any)
+  onProjectUpdate()
   {    
-    console.log(project.value);
+    this.projectservice.updateProject().then(res=>{
+      this.projectservice.getProjects(); 
+      this.router.navigate(['ProjectDetails']);     
+    });  
 
   }
 
