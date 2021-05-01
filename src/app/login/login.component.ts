@@ -18,17 +18,18 @@ export class LoginComponent implements OnInit {
   }
   username : string; 
   welcomeuser :string;
+
   onLogin(loginForm : NgForm)
-  {
-        
+  {        
     this.authService.authUser(loginForm.value).then(
-       res=>{this.username =res.email, this.welcomeuser=res.firstName +" "+res.lastName}       
-    )
-    if(this.username != null)
-    {
-      localStorage.setItem('token',this.welcomeuser); 
-      this.router.navigate(['UserDetails']);
-    }
+       res=>{this.username =res.email; this.welcomeuser=res.firstName +" "+res.lastName;      
+       if(this.username != null)
+       {
+         localStorage.setItem('token',this.welcomeuser); 
+         this.router.navigate(['UserDetails']);
+       }
+      }       
+    );    
   }
 
 }

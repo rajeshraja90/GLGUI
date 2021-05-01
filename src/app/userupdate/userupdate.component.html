@@ -1,8 +1,9 @@
 <div class="maindiv">
+    <form #updateUserForm="ngForm" (ngSubmit)="onUserUpdate()">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../UserDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
         <button mat-raised-button (click)="onUserDelete(userservice.updateUserCollection.id)" style="margin-left:10px;background-color:cadetblue;">Delete</button>
-        <button mat-raised-button (click)="onUserUpdate()" style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button type="submit" [disabled]="!updateUserForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">
@@ -44,5 +45,5 @@
         </tr>
         
     </table>
-
+</form>
 </div>

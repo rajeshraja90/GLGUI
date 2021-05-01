@@ -1,9 +1,9 @@
 <div class="maindiv">
-    <form #updateProjectForm="ngForm">
+    <form #updateProjectForm="ngForm" (ngSubmit)="onProjectUpdate()">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../ProjectDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
-        <button mat-raised-button type="submit" [disabled]="!updateProjectForm" (click)="onProjectDelete(projectservice.updateProjectCollection.id)" style="margin-left:10px;background-color:cadetblue;">Delete</button>
-        <button mat-raised-button type="submit" [disabled]="!updateProjectForm" (click)="onProjectUpdate()" style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button (click)="onProjectDelete(projectservice.updateProjectCollection.id)" style="margin-left:10px;background-color:cadetblue;">Delete</button>
+        <button mat-raised-button type="submit" [disabled]="!updateProjectForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">

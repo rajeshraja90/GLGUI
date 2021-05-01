@@ -1,7 +1,8 @@
 <div class="maindiv">
+    <form #addTaskForm ="ngForm" (ngSubmit)="onAddTask(addTaskForm)">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../TaskDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
-        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button type="submit" [disabled]="!addTaskForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">
@@ -12,9 +13,9 @@
             </td>
             <td>                
                 <mat-form-field style="margin-left:10px;width:300px;">
-                    <select matNativeControl>
-                        <option value="1">Project 1</option>
-                        <option value="2">Project 2</option>
+                    <select matNativeControl requuired name="projectID" ngModel>
+                        <option value="0">--Select--</option>
+                        <option *ngFor ="let project of projectService.listProject" value={{project.id}}>{{project.name}}</option>
                     </select>
                   </mat-form-field>                
             </td>
@@ -27,9 +28,9 @@
             
             <td>
                 <mat-form-field style="margin-left:10px;width:300px;" >
-                    <select matNativeControl>
-                        <option value="1">User 1</option>
-                        <option value="2">User 2</option>
+                    <select matNativeControl requuired name="assignedToUserID" ngModel>
+                        <option value="0">--Select--</option>
+                        <option *ngFor="let user of userService.listuser" value={{user.id}}>{{user.firstName + " "+ user.lastName }}</option>
                     </select>
                   </mat-form-field>   
             </td>
@@ -41,12 +42,11 @@
             </td>
             <td colspan="4">
                 <mat-form-field style="margin-left:10px;width:300px;" >             
-                    <textarea matInput type="text"></textarea>
+                    <textarea matInput required ngModel name="detail" type="text"></textarea>
                     </mat-form-field>
             </td>
-        </tr>
-       
+        </tr>       
         
     </table>
-
+</form>
 </div>

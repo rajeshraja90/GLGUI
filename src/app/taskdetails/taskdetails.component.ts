@@ -20,6 +20,7 @@ export class TaskdetailsComponent implements OnInit {
 
   onTaskSelected(tasks :TaskModel)
   {
+    this.taskservice.updateTaskCollection=tasks;
     this.router.navigate(['TaskUpdate']);
   }
 

@@ -1,8 +1,9 @@
 <div class="maindiv">
+    <form #updateTaskForm="ngForm" (ngSubmit)="onTaskUpdate()">
     <div style="margin-left: 40%;">
         <button mat-raised-button routerLink='../TaskDetails' style="margin-left:10px;background-color:cadetblue;">Cancel</button> 
-        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Delete</button>
-        <button mat-raised-button style="margin-left:10px;background-color:cadetblue;">Save</button>
+        <button mat-raised-button (click)="onTaskDelete()" style="margin-left:10px;background-color:cadetblue;">Delete</button>
+        <button mat-raised-button type="submit" [disabled]="!updateTaskForm.valid" style="margin-left:10px;background-color:cadetblue;">Save</button>
     </div>
    
     <table style="margin-top: 40px;">
@@ -13,9 +14,9 @@
             </td>
             <td>                
                 <mat-form-field style="margin-left:10px;width:300px;">
-                    <select matNativeControl>
-                        <option value="1">Project 1</option>
-                        <option value="2">Project 2</option>
+                    <select matNativeControl requuired name="projectID" [(ngModel)]='taskService.updateTaskCollection.projectID'>
+                        <option value="0">--Select--</option>
+                        <option *ngFor ="let project of projectService.listProject" value={{project.id}} [selected]="project.id==taskService.updateTaskCollection.projectID">{{project.name}}</option>
                     </select>
                   </mat-form-field>                
             </td>
@@ -28,9 +29,9 @@
             
             <td>
                 <mat-form-field style="margin-left:10px;width:300px;" >
-                    <select matNativeControl>
-                        <option value="1">User 1</option>
-                        <option value="2">User 2</option>
+                    <select matNativeControl requuired name="assignedToUserID" [(ngModel)]='taskService.updateTaskCollection.assignedToUserID'>
+                        <option value="0">--Select--</option>
+                        <option *ngFor="let user of userService.listuser" value={{user.id}} [selected]="user.id==taskService.updateTaskCollection.assignedToUserID">{{user.firstName + " "+ user.lastName }}</option>
                     </select>
                   </mat-form-field>   
             </td>
@@ -43,11 +44,9 @@
             
             <td>
                 <mat-form-field style="margin-left:10px;width:300px;" >
-                    <select matNativeControl>
-                        <option value="1">New</option>
-                        <option value="2">InProgress</option>
-                        <option value="3">OnHold</option>
-                        <option value="4">Done</option>
+                    <select matNativeControl requuired name="status" [(ngModel)]='taskService.updateTaskCollection.status'>
+                        <option *ngFor="let status of listStatus" value={{status.id}} [selected]="status.id===taskService.updateTaskCollection.status">{{status.statusname}}</option>
+                        
                     </select>
                   </mat-form-field>   
             </td>
@@ -59,12 +58,12 @@
             </td>
             <td colspan="4">
                 <mat-form-field style="margin-left:10px;width:300px;" >             
-                    <textarea matInput type="text"></textarea>
+                    <textarea matInput type="text" required [(ngModel)]='taskService.updateTaskCollection.detail' name="detail"></textarea>
                     </mat-form-field>
             </td>
         </tr>
        
         
     </table>
-
+</form>
 </div>
