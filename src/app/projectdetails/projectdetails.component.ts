@@ -17,6 +17,11 @@ export class ProjectdetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
+
     this.projectservice.getProjects();
 
   }

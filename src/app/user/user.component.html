@@ -37,33 +37,20 @@
             </td>
             <td >        
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                 <input matInput tyep="email" required ngModel name="email">
+                 <input matInput tyep="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required ngModel name="email" >
                 </mat-form-field>
                  
             </td>
-        </tr>
+        </tr>        
         <tr>
             <td>
-                <br>
+               <br>
                 <label>Password</label>
             </td>
             <td >        
                 <mat-form-field  style="margin-left:10px;width:300px;">             
-                 <input matInput type="password" required  >
-                </mat-form-field>
-                 
-            </td>
-        </tr>
-        <tr>
-            <td>
-               <br>
-                <label>Confirm Password</label>
-            </td>
-            <td >        
-                <mat-form-field  style="margin-left:10px;width:300px;">             
                  <input matInput type="password" required ngModel name="password">
-                </mat-form-field>
-                 
+                </mat-form-field>                 
             </td>
         </tr>    
     </table>

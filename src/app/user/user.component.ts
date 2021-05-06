@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/userservice.service';
 
@@ -14,10 +14,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
   }
 
   userid : number;
-
+email:string;
   onAddUser(userdata : NgForm)
   {
       this.userservice.addUser(userdata.value).then(res =>{ 
@@ -25,6 +29,6 @@ export class UserComponent implements OnInit {
       this.router.navigate(['UserDetails']);
     });
       
-  }
-
+  }   
 }
+

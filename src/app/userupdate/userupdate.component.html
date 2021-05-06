@@ -38,7 +38,7 @@
             </td>
             <td >        
                 <mat-form-field style="margin-left:10px;width:300px;">             
-                 <input matInput tyep="email" [(ngModel)]= 'userservice.updateUserCollection.email' required name="email">
+                 <input matInput tyep="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]= 'userservice.updateUserCollection.email' required name="email">
                 </mat-form-field>
                  
             </td>

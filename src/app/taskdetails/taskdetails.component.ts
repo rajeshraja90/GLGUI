@@ -15,6 +15,11 @@ export class TaskdetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
+
     this.taskservice.gettask(); 
   }
 

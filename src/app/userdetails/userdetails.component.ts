@@ -17,7 +17,12 @@ export class UserdetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userservice.getuser(); 
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
+        
+    this.userservice.getuser();     
   }
 
  onSelected(users :UserModel)

@@ -16,6 +16,10 @@ export class TaskComponent implements OnInit {
     private taskService : TaskService, private router:Router) { }
   ngOnInit(): void {
 
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
     this.projectService.getProjects();
     this.userService.getuser();
 

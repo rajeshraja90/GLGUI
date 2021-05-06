@@ -13,6 +13,11 @@ export class ProjectupdateComponent implements OnInit {
   constructor(public projectservice : ProjectService, private router:Router) { }
 
   ngOnInit(): void {
+
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
   }
 
   onProjectDelete(id : number){

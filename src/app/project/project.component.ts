@@ -14,6 +14,11 @@ export class ProjectComponent implements OnInit {
   constructor(private projectservice : ProjectService, private router: Router) { }
 
   ngOnInit(): void {
+
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
   }
 
   projectid : number;

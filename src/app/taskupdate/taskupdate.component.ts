@@ -28,6 +28,10 @@ export class TaskupdateComponent implements OnInit {
 
   ngOnInit(): void {   
     
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
   }
 
   onTaskUpdate()

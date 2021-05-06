@@ -45,7 +45,7 @@
             <td>
                 <mat-form-field style="margin-left:10px;width:300px;" >
                     <select matNativeControl requuired name="status" [(ngModel)]='taskService.updateTaskCollection.status'>
-                        <option *ngFor="let status of listStatus" value={{status.id}} [selected]="status.id===taskService.updateTaskCollection.status">{{status.statusname}}</option>
+                        <option *ngFor="let status of listStatus" value={{status.id}} [selected]="status.id==taskService.updateTaskCollection.status">{{status.statusname}}</option>
                         
                     </select>
                   </mat-form-field>   

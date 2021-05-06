@@ -13,6 +13,11 @@ export class UserupdateComponent implements OnInit {
   constructor(public userservice:UserService, private router:Router) { }
 
   ngOnInit(): void {
+    
+    if(!localStorage.getItem('token'))
+    {
+      this.router.navigate(['Login']);
+    }
   }
 
   onUserDelete(id : number)
